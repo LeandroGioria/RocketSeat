@@ -1,1 +1,4 @@
-This is some text
+RocketSeat course projects files
+  NodeJS
+  React
+  ReactNative
