@@ -1,4 +1,4 @@
-yarn add express
+﻿yarn add express
 Yarn add nodemon -D
 Yarn add eslint
 Yarn eslint —init
@@ -47,7 +47,10 @@ banco de dados + sequelize
 yarn add sequelize
 yarn add sequelize-cli -D
 
-create database/migrations
+if your DB is postgres:
+	yarn add pg pg-hstore
+
+create folder -> database/migrations
 create config/database.js
 	module.exports = {
 	  dialect: 'postgres',
