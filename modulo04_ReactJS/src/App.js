@@ -3,7 +3,11 @@ import './App.css';
 import TechList from './components/TechList';
 
 function App() {
-  return <TechList />
+  return (
+    <>
+      <TechList />
+    </>
+  );
 }
 
 export default App;

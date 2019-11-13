@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import TechItem from './TechItem';
-import { throws } from 'assert';
 
 class TechList extends Component {
   state = {
