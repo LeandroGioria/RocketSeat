@@ -11,14 +11,9 @@ projects = [{
 
 let numberOfRequests = 0;
 
-server.use((req, res, next) => {
-  numberOfRequests++;  
-  console.log(`Num requisitions: ${numberOfRequests}`);
+server.use(IncrementNumberOfRequests);
 
-  next();
-});
-
-//Middleware
+//Middlewares //////////////////////////////////////////////////////////////////
 function checkProjectExists(req, res, next){
   const { id } = req.params;
   const project = projects.find(p => p.id == id);
@@ -29,6 +24,14 @@ function checkProjectExists(req, res, next){
 
   return next();
 }
+
+function IncrementNumberOfRequests(req, res, next){
+  numberOfRequests++;  
+  console.log(`🚀 Num requisitions: ${numberOfRequests}`);
+
+  next();
+}
+///////////////////////////////////////////////////////////////////////////////
 
 server.get('/projects', (req, res) => {
   return res.json(projects);
@@ -70,4 +73,6 @@ server.post('/projects/:id/tasks', checkProjectExists, (req, res) => {
   return res.json(projects);
 });
 
-server.listen(3000);
+server.listen(3333, () => {
+  console.log('Backend started!')
+});
